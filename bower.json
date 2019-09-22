@@ -1,0 +1,33 @@
+{
+  "name": "purescript-simple-i18n",
+  "license": "MIT",
+  "homepage": "https://github.com/oreshinya/purescript-simple-i18n",
+  "authors": [
+    "Shinya Takahashi <s.takahashi313@gmail.com>"
+  ],
+  "description": "Type-safe internationalization utilities",
+  "keywords": [
+    "purescript",
+    "i18n"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oreshinya/purescript-simple-i18n.git"
+  },
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-record-extra": "^3.0.1",
+    "purescript-foreign-object": "^2.0.3"
+  },
+  "devDependencies": {
+    "purescript-test-unit": "^15.0.0"
+  }
+}
