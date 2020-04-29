@@ -26,6 +26,9 @@ newtype Translator (xs :: SList) = Translator
   , translations :: Object (Translation xs)
   }
 
+instance showTranslator :: Show (Translator xs) where
+  show (Translator { currentLang }) = "(Translator " <> show currentLang <> ")"
+
 -- | Create a `Translator` from a proxy as fallback language and a homogeneous record with `Translation` fields.
 createTranslator
   :: forall fallbacklang xs r tail

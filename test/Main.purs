@@ -38,6 +38,10 @@ translator = createTranslator (SProxy :: _ "en") { en, ja }
 main :: Effect Unit
 main = runTest do
   suite "Translate" do
+    test "show" do
+      Assert.equal "(Translator \"en\")" $ show translator
+      let translator' = translator # setLang "ja"
+      Assert.equal "(Translator \"ja\")" $ show translator'
     test "Default lang" do
       Assert.equal "en" $ translator # currentLang
       Assert.equal "Apple" $ translator # translate (label :: _ "apple")
