@@ -2,11 +2,11 @@ module Test.Main where
 
 import Prelude
 
-import Data.Symbol (SProxy(..))
 import Effect (Effect)
 import Record.Extra (type (:::), SNil)
 import Simple.I18n.Translation (Translation, fromRecord)
 import Simple.I18n.Translator (Translator, createTranslator, currentLang, label, setLang, translate)
+import Type.Proxy (Proxy(..))
 import Test.Unit (suite, test)
 import Test.Unit.Assert as Assert
 import Test.Unit.Main (runTest)
@@ -33,7 +33,7 @@ ja = fromRecord
   }
 
 translator :: Translator Labels
-translator = createTranslator (SProxy :: _ "en") { en, ja }
+translator = createTranslator (Proxy :: _ "en") { en, ja }
 
 main :: Effect Unit
 main = runTest do

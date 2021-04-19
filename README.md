@@ -70,11 +70,12 @@ Pass fallback language and translations to `createTranslator`.
 
 ```purescript
 import Simple.I18n.Translator (Translator, createTranslator, label, setLang, translate)
+import Type.Proxy (Proxy(..))
 
 translator :: Translator Labels
 translator =
   createTranslator
-    (SProxy :: _ "en") -- Fallback language (and default language)
+    (Proxy :: _ "en") -- Fallback language (and default language)
     { en, ja } -- Translations
 ```
 
@@ -93,7 +94,7 @@ main = do
   -- some codes
 ```
 
-You might think "Why can `setLang` receive `String` instead of `SProxy`?".
+You might think "Why can `setLang` receive `String` instead of `Proxy`?".
 
 The reason is that we get language setting from outside of PureScript like `navigator.language`, `localStorage`, `subdomain`, `path`, `query parameter`, or others in most cases.
 
@@ -107,11 +108,12 @@ You can get translation type-safely.
 import Prelude
 
 import Simple.I18n.Translator (Translator, createTranslator, label, setLang, translate)
+import Type.Proxy (Proxy(..))
 
 translator :: Translator Labels
 translator =
   createTranslator
-    (SProxy :: _ "en") -- Fallback language (and default language)
+    (Proxy :: _ "en") -- Fallback language (and default language)
     { en, ja } -- Translations
 
 main :: Effect Unit

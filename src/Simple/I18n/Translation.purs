@@ -8,7 +8,7 @@ import Prelude
 
 import Foreign.Object (Object, fromHomogeneous)
 import Prim.RowList (class RowToList)
-import Record.Extra (class SListToRowList, kind SList)
+import Record.Extra (class SListToRowList, SList)
 import Type.Row.Homogeneous (class Homogeneous)
 import Type.RowList (class ListToRow)
 import Unsafe.Coerce (unsafeCoerce)

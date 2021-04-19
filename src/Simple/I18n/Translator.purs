@@ -10,12 +10,13 @@ module Simple.I18n.Translator
 import Prelude
 
 import Data.Maybe (fromMaybe)
-import Data.Symbol (class IsSymbol, SProxy(..), reflectSymbol)
+import Data.Symbol (class IsSymbol, reflectSymbol)
 import Foreign.Object (Object, fromHomogeneous, lookup)
 import Prim.Row (class Cons)
 import Record (get)
-import Record.Extra (class SListToRowList, kind SList)
+import Record.Extra (class SListToRowList, SList)
 import Simple.I18n.Translation (Translation, toRecord)
+import Type.Proxy (Proxy(..))
 import Type.Row.Homogeneous (class Homogeneous)
 import Type.RowList (class ListToRow)
 
@@ -35,7 +36,7 @@ createTranslator
    . IsSymbol fallbacklang
   => Homogeneous r (Translation xs)
   => Cons fallbacklang (Translation xs) tail r
-  => SProxy fallbacklang
+  => Proxy fallbacklang
   -> Record r
   -> Translator xs
 createTranslator flangP r = Translator
@@ -54,8 +55,8 @@ setLang lang (Translator r) =
   Translator r { currentLang = lang }
 
 -- | A label for translation.
-label :: forall label. SProxy label
-label = SProxy
+label :: forall label. Proxy label
+label = Proxy
 
 -- | Get a translated string of a passed label.
 translate
@@ -65,7 +66,7 @@ translate
   => SListToRowList xs rl
   => Homogeneous r String
   => Cons label String tail r
-  => SProxy label
+  => Proxy label
   -> Translator xs
   -> String
 translate proxy (Translator r) =
