@@ -24,10 +24,10 @@
     "output"
   ],
   "dependencies": {
-    "purescript-record-extra": "^4.0.0",
-    "purescript-foreign-object": "^3.0.0"
+    "purescript-record-extra": "^5.0.0",
+    "purescript-foreign-object": "^4.1.0"
   },
   "devDependencies": {
-    "purescript-test-unit": "^16.0.0"
+    "purescript-test-unit": "^17.0.0"
   }
 }
