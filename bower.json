@@ -1,33 +1,25 @@
 {
-  "name": "purescript-simple-i18n",
-  "license": "MIT",
-  "homepage": "https://github.com/oreshinya/purescript-simple-i18n",
-  "authors": [
-    "Shinya Takahashi <s.takahashi313@gmail.com>"
-  ],
-  "description": "Type-safe internationalization utilities",
-  "keywords": [
-    "purescript",
-    "i18n"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/oreshinya/purescript-simple-i18n"
-  },
-  "moduleType": [
-    "node"
-  ],
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "output"
-  ],
-  "dependencies": {
-    "purescript-record-extra": "^5.0.0",
-    "purescript-foreign-object": "^4.1.0"
-  },
-  "devDependencies": {
-    "purescript-test-unit": "^17.0.0"
-  }
+    "name": "purescript-simple-i18n",
+    "license": [
+        "MIT"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oreshinya/purescript-simple-i18n"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "output"
+    ],
+    "dependencies": {
+        "purescript-foreign-object": "^v4.1.0",
+        "purescript-maybe": "^v6.0.0",
+        "purescript-prelude": "^v6.0.1",
+        "purescript-record": "^v4.0.0",
+        "purescript-record-extra": "^v5.0.1",
+        "purescript-typelevel-prelude": "^v7.0.0",
+        "purescript-unsafe-coerce": "^v6.0.0"
+    }
 }
